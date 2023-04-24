@@ -1,5 +1,5 @@
-import { DEADLINE } from "./helpers/constants";
-import { addMessage,addMistake } from "./helpers/secondary_func";
+import { DEADLINE } from "./helpers/constants.js";
+import { addMessage,addMistake } from "./helpers/secondary_func.js";
 export const needRefined = () => {
 
   return `

@@ -1,3 +1,4 @@
+import { DEADLINE } from "./constants.js";
 export const addMessage = (text) => {
   const additionalMessage = confirm(text);
   let message = "\n";
