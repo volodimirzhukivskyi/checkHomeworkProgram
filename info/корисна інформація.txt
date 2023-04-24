@@ -1,0 +1,5 @@
+let letter = prompt("Введите букву 'а'")
+
+while(+letter!=='a'){
+    letter = prompt("Помилка введіть знову букву" ,letter )
+}
