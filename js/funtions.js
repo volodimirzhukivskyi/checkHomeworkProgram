@@ -1,27 +1,29 @@
 import { DEADLINE } from "./helpers/constants.js";
-import { addMessage,addMistake } from "./helpers/secondary_func.js";
+import { addMessage,addMistake, workPower } from "./helpers/secondary_func.js";
+import { checkDataTime } from "./helpers/secondary_func.js";
 export const needRefined = () => {
 
   return `
-Доброго дня.
-Гарно потрудилися. Э певні зауваження:
+${checkDataTime()}\n
+${workPower()}
 ${addMistake()}
-Потрібно допрацювати і  відпавити знову. Буду очікувати на допрацьований варіант.
+${addMessage(DEADLINE)}\n
+Потрібно допрацювати і  відпавити знову. Буду очікувати на допрацьований варіант.\n
     `;
 };
 export const askStudent = () => {
   return `
-Доброго дня.
-Сьогодні будете на консультації?
+  ${checkDataTime()}\n
+Сьогодні будете на консультації?\n
 
         `;
 };
 
 export const good = () => {
-  let result = `Доброго вечора/дня.
-Все вірно виконали.
-${addMessage(DEADLINE)}
-${addMessage("Написати додаткове повідомлення?")}
+  let result = `${checkDataTime()}\n
+Все вірно виконали.\n
+${addMessage(DEADLINE)}\n
+${addMessage("Написати додаткове повідомлення?")}\n
 `;
   return result;
 };
