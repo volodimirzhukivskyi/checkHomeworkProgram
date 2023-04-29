@@ -1,1 +1,2 @@
 export const DEADLINE = "Пропустили деделайн?";
+export const  MEETINGS = ["https://meet.google.com/eds-dczc-tbg","https://meet.google.com/usb-vxfi-dqx","https://meet.google.com/mqu-epjb-atx","https://meet.google.com/htu-qxhp-tqw","https://meet.google.com/gtb-ughc-qmm","https://meet.google.com/nkr-wsvq-qmp","https://meet.google.com/ufz-jtii-kix"]

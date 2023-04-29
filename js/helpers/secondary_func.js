@@ -1,7 +1,7 @@
 import { DEADLINE } from "./constants.js";
 export const addMessage = (text) => {
   const additionalMessage = confirm(text);
-  let message = "\n";
+  let message = "";
   if (text === DEADLINE) {
     const changeMessage = DEADLINE.replace("?", ".");
     message = additionalMessage ? changeMessage : "";
@@ -25,32 +25,35 @@ export const addMistake = () => {
   }
   return result;
 };
-export function copyBuffer(addMessage) {
+export function copyBuffer(addMessage, handler) {
+  console.log(addMessage);
   navigator.clipboard
     .writeText(addMessage)
-    .then(() => console.log("Текст скопирован в буфер обмена"))
+    .then(() => {
+      console.log("Текст скопирован в буфер обмена");
+      handler();
+    })
     .catch((err) => console.error("Не удалось скопировать текст: ", err));
 }
 export function workPower() {
   const power = confirm("Студент гарно потрудився над завданням? ");
   return power
-    ? `Доброго вечора/дня.\n
-    Майже все виконали вірно.\n
-    Є не величкі помилки:\n`
-    : `Доброго дня.\n
-  Гарно потрудилися. Э певні зауваження:\n`;
+    ? "Майже все виконали вірно.\n\n не величкі помилки:\n"
+    : " Гарно потрудилися. Э певні зауваження:\n";
 }
 export function checkDataTime() {
   const hours = new Date().getHours();
+  console.log(hours);
   const boolData = (num1, num2) => {
-    return hours >= num1 && hours <= num2;
+    return hours >= num1 || hours <= num2;
   };
 
-  if (boolData(21, 5)) {
+  if (boolData(18, 5)) {
     return "Доброго вечора!";
-  } else if (boolData(6, 10)) {
+  } else if (boolData(5, 10)) {
     return "Доброго ранку!";
   } else {
     return "Доброго дня!";
   }
 }
+// const check

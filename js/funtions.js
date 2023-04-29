@@ -7,13 +7,13 @@ export const needRefined = () => {
 ${checkDataTime()}\n
 ${workPower()}
 ${addMistake()}
-${addMessage(DEADLINE)}\n
+${addMessage(DEADLINE)}
 Потрібно допрацювати і  відпавити знову. Буду очікувати на допрацьований варіант.\n
     `;
 };
 export const askStudent = () => {
   return `
-  ${checkDataTime()}\n
+  ${checkDataTime()}
 Сьогодні будете на консультації?\n
 
         `;

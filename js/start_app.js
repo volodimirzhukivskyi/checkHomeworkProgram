@@ -1,21 +1,33 @@
 import { needRefined, askStudent, good } from "./funtions.js";
 import { copyBuffer } from "./helpers/secondary_func.js";
 import { checkDataTime } from "./helpers/secondary_func.js";
-// const nameFunc = prompt("Введіть функцію");
 
+const changeFunc = () => {
+  const nameFunc = prompt("Введіть функцію");
+  let result = "";
+  switch (nameFunc) {
+    case "a":
+      //? Потррібно допрацювати
+      result = needRefined();
+      break;
+    case "s":
+      //? Питання до студента
+      result = askStudent();
+      break;
 
-// const changeFunc = (nameFunc) => {
-//   switch (nameFunc) {
-//     case "need":
-//       return needRefined();
-//     case "ask":
-//       return askStudent();
-//     case "good":
-//       return good();
-//     default:
-//       break;
-//   }
-// };
+    //? Вірна відповідь
+    case "d":
+      result = good();
+      break;
 
-// copyBuffer(changeFunc(nameFunc));
-console.log(checkDataTime());
+    default:
+      break;
+  }
+  if (result === "") {
+    return;
+  } else {
+    copyBuffer(result,changeFunc);
+  }
+};
+
+changeFunc();
